@@ -1,0 +1,18 @@
+.btn {
+  background-color: transparent;
+  outline: none;
+  border: 2px solid black;
+}
+
+.red {
+  border-color: red;
+  color: red;
+}
+.green {
+  border-color: green;
+  color: green;
+}
+.gray {
+  border-color: gray;
+  color: gray;
+}
