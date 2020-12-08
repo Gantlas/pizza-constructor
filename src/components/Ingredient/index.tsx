@@ -2,12 +2,19 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { actionAddIngredient, actionRemoveIngredient } from "../../actions";
+import { RootState } from "../../reducers";
 import s from "./styles.module.css";
 
-const Ingredient = ({ ingredient }) => {
+type TProps = {
+  ingredient: string;
+};
+
+const Ingredient = ({ ingredient }: TProps) => {
   const [checked, setCheck] = useState(false);
-  const countIngredients = useSelector((state) => state.countIngredients);
-  const currentIngredients = useSelector((state) => state.currentIngredients);
+  const countIngredients = useSelector(
+    (state: RootState) => state.countIngredients
+  );
+  // const currentIngredients = useSelector((state) => state.currentIngredients);
 
   const dispatch = useDispatch();
 
@@ -15,7 +22,7 @@ const Ingredient = ({ ingredient }) => {
     setCheck(!checked);
   };
 
-  const addIngredient = (ingredient) => {
+  const addIngredient = (ingredient: string): void => {
     // console.log(currentIngredients);
     if (countIngredients < 5) {
       dispatch(actionAddIngredient(ingredient));
@@ -25,7 +32,7 @@ const Ingredient = ({ ingredient }) => {
     }
   };
 
-  const removeIngredient = (ingredient) => {
+  const removeIngredient = (ingredient: string): void => {
     // console.log(currentIngredients);
     dispatch(actionRemoveIngredient(ingredient));
     switchCheck();

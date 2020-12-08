@@ -1,11 +1,16 @@
-import { actionTypes } from "../actions";
+import { actionTypes, TActions } from "../actions";
 
-const initialState = {
+type TState = {
+  currentIngredients: string[];
+  countIngredients: number;
+};
+
+const initialState: TState = {
   currentIngredients: [],
   countIngredients: 0,
 };
 
-const reducer = (state = initialState, action) => {
+const reducer = (state: TState = initialState, action: TActions): TState => {
   // console.log(action);
   switch (action.type) {
     case actionTypes.ADD_INGREDIENT: {
@@ -32,3 +37,5 @@ const reducer = (state = initialState, action) => {
 };
 
 export default reducer;
+
+export type RootState = ReturnType<typeof reducer>;

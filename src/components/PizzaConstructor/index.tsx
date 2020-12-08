@@ -3,7 +3,8 @@ import { Ingredient } from "../Ingredient";
 import s from "./styles.module.css";
 
 const PizzaConstructor = () => {
-  const ingredients = ["1", "2", "3", "4", "5", "6", "7", "8"];
+  const ingredients: string[] = ["1", "2", "3", "4", "5", "6", "7", "8"];
+
   return (
     <div className={s.wrapper}>
       <h1>Pizza Constructor</h1>
@@ -11,8 +12,8 @@ const PizzaConstructor = () => {
       {/*View pizza*/}
       <p>Choose the ingredients</p>
       <ul className={s.list}>
-        {ingredients.map((ing, i) => (
-          <li key={i} className={s.item}>
+        {ingredients.map((ing) => (
+          <li key={ing} className={s.item}>
             {/* {console.log(ing)} */}
             <Ingredient ingredient={ing} />
           </li>
