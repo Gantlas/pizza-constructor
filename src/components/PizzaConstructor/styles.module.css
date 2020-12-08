@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.item {
+  margin-bottom: 5px;
+}

@@ -1,13 +1,21 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import ReactDOM from "react-dom";
+
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+
+import "./index.css";
 import { PizzaConstructor } from "./components";
+import reducer from "./reducers";
+
+const store = createStore(reducer);
 
 ReactDOM.render(
   <React.StrictMode>
-    <PizzaConstructor />
+    <Provider store={store}>
+      <PizzaConstructor />
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
